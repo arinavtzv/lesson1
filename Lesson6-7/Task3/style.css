@@ -1,0 +1,55 @@
+h1 {
+  font: "Arial";
+  font-size: 30px;
+}
+
+h2 {
+  font: "Times New Roman";
+  font-size: large;
+}
+
+table {
+  width: 80%; /* Ширина таблицы */
+  border-collapse: collapse; /* Убрать двойные рамки */
+ }
+ .forum th, td {
+  border: 1px solid #333; /* Параметры рамки */
+  padding: 4px; /* Поля в ячейках */
+ }
+ .forum tr:hover { 
+  background: #e9bcb5; /* Цвет фона */
+ }
+
+#catalog { 
+  height: auto;
+}
+
+.col3 {
+  color:rgb(223, 233, 139);
+  background: rgb(157, 197, 209);
+}
+
+p {
+  font-size: 60px;
+}
+
+a:visited.new > #newOrder > span {
+  color: orange;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu ul li:last-child {
+  color:#e9bcb5;
+}
+
+
+h1 + .block_title {
+  color:rgb(107, 164, 182);
+}
+
+#newPage h2#lastHeader > span.smallFont {
+  color:rgb(226, 135, 226);
+}

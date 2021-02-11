@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #fdc407;
+  }
+  
+  h1 {
+    width: 70%;
+    margin: 0 auto 8px;
+    font-family: "Arial black";
+    text-align: center;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 50px;
+    -webkit-text-stroke: 3px black;
+  }
+  
+  .container {
+    width: 510px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .site-header {
+    min-width: 550px;
+    height: 186px;
+    margin-bottom: 70px;
+    padding-top: 30px;
+    background: #847462 no-repeat center url("image.jpg");
+    background-size: cover;
+    color: #ffffff;
+  }
+  
+  .site-header p {
+    width: 255px;
+    margin: 0 auto 26px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px; 
+  }
+  
+  .site-header img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .header {
+    width: 510px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+  }
+  
+  .features p {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    margin: 0 5px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-align: center;
+  }
+  
+  .advantages {
+    width: 510px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+  }
+  
+  .advantages-list {
+    padding: 0;
+    list-style: none;  
+  }
+  
+  .advantages-item {
+    margin-bottom: 15px;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 15px 25px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+ }
+
+ a#order {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+  color: #000 !important;
+  font-weight: normal;
+ }
+
+ .links {
+    text-align: center;
+ }
+
+ .description {
+    margin: 20px;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+ }
+
+ .description-header {
+    margin: 20px;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000000;
+ }
+
+ ul li:before
+ {content:'\2713';
+   display:inline-block;
+   color:rgb(122, 6, 93);
+   padding:0 6px 0 0;
+   }
+ ul li{list-style-type:none;font-size:1em;}

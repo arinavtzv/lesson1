@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+
+ <head>
+   <meta charset="utf-8">
+   <title>International Company IKEA</title>
+   <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>IKEA</h1>
+    </div>
+  </header>
+
+  <section class="advantages">
+    <h2>List Of Products:</h2>
+    <ul class="advantages-list">
+      <table id="table"></table>
+    </ul>
+  </section>
+
+  <div id="orderContainer">
+  
+  <script>
+  
+    let orderList = [
+      {
+      name:"Sofa", 
+      description:"Piece of furniture", 
+      cost:20000, 
+      currency:"RUB", 
+      size:'80 x 95 x 265', 
+      weight:'100kg' , 
+      manufacturers_firm:"IKEA", 
+      dateOfManufacture:"19.12.2020"
+      },
+
+    {
+      name:"Pillow", 
+      description:"Bed Linen", 
+      cost:700, 
+      currency:"RUB", 
+      size:'50 x 50', 
+      weight:'80g', 
+      manufacturers_firm:"IKEA", 
+      dateOfManufacture:"29.12.2020"
+    },
+
+    {
+      name:"Vase", 
+      description:"Decoration", 
+      cost:2300, 
+      currency:"RUB", 
+      size:'8.5 x 20 cm', 
+      weight:'800g', 
+      manufacturers_firm:"IKEA", 
+      dateOfManufacture:"29.12.2020"
+    }
+
+    ];
+   
+    let table = document.getElementById('table');
+
+    for (let elem of orderList) {
+      let tr = document.createElement('tr');
+      let name = document.createElement('p');
+      let button = document.createElement('button');
+      name.innerText = elem.name;
+      tr.appendChild(name);
+      for (let key in elem) {
+        if (key !== 'name') {
+          let td = document.createElement('td');
+          td.innerHTML = elem[key];
+          tr.appendChild(td);
+        }
+      }
+
+      button.innerText = 'Delete String';
+      tr.appendChild(button);
+      button.addEventListener ('click', function(evt) {
+        evt.target.closest('tr').remove();
+      });
+      table.appendChild(tr);
+      }
+
+  </script>
+
+  </div>
+
+  <section class="links">
+    <a href="index2.1.html">Back To The Main Page</a>
+  </section>
+
+ </body>
+</html>

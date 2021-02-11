@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+
+ <head>
+   <meta charset="utf-8">
+   <title>International Company IKEA</title>
+   <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>IKEA</h1>
+    </div>
+  </header>
+
+  <section>
+    <h2>List Of Products:</h2>
+      <table id="table"></table>
+  </section>
+
+  <div id="orderContainer">
+  
+  <script>
+  
+    //Создание массива объектов
+    let orderList = [
+      {
+      name:"Sofa", 
+      description:"Piece of furniture", 
+      cost:20000, 
+      currency:"RUB", 
+      size:'80 x 95 x 265', 
+      weight:'100kg' , 
+      manufacturers_firm:"IKEA", 
+      dateOfManufacture:"19.12.2020"
+      },
+
+    {
+      name:"Pillow", 
+      description:"Bed Linen", 
+      cost:700, 
+      currency:"RUB", 
+      size:'50 x 50', 
+      weight:'80g', 
+      manufacturers_firm:"IKEA", 
+      dateOfManufacture:"29.12.2020"
+    },
+
+    {
+      name:"Vase", 
+      description:"Decoration", 
+      cost:2300, 
+      currency:"RUB", 
+      size:'8.5 x 20 cm', 
+      weight:'800g', 
+      manufacturers_firm:"IKEA", 
+      dateOfManufacture:"29.12.2020"
+    }
+    
+  ];
+    let counter = 0;
+
+    //Поиск таблицы
+    let table = document.getElementById('table');
+
+    //Создание таблицы из массива объектов
+    for (let elem of orderList) 
+    {
+      let tr = document.createElement('tr');
+      let name = document.createElement('a');
+      name.setAttribute("id", "order");
+      name.setAttribute("onclick", "order("+counter+")");
+      counter++;
+      name.innerText = elem.name;
+      tr.appendChild(name);
+      name.innerText = elem.name;
+      tr.appendChild(name);
+      for (let key in elem) 
+      {
+        if (key !== 'name') 
+        {
+          let td = document.createElement('td');
+          td.innerHTML = elem[key];
+          tr.appendChild(td);
+        }
+      }
+
+    //Создание кнопки удаления строки, добавление в ячейку таблицы
+    let button = document.createElement('button');
+    button.innerText = 'Delete String';
+    tr.appendChild(button);
+    button.addEventListener ('click', function(evt) 
+    {
+      evt.target.closest('tr').remove();
+    });
+      table.appendChild(tr);
+    }
+
+    //Создание полей для заполнения текстом
+    let newTr = document.createElement('tr');
+    let elem = orderList[0];
+    for (let key in elem) 
+    {
+      let td = document.createElement('td');
+      td.innerHTML = "<input name = '"+elem[key]+"' id='field' type='text' placeholder = '"+elem[key]+"'>";
+      newTr.appendChild(td);
+    }
+
+    //Создание кнопки добавления строки с учётом того, что у новой строки должна быть кнопка удаления
+    let newButton = document.createElement('button');
+    newButton.innerText = 'Add String';
+    newTr.appendChild(newButton);
+    newButton.addEventListener ('click', function(evt) 
+    {
+      let addTr = document.createElement('tr');
+      let button = document.createElement('button');
+      let elem = orderList[0];
+
+      let ord = [];
+      let privateCounter = 0;
+
+      for (let key in elem) 
+      {
+        if (key !== 'name') 
+        {
+          let td = document.createElement('td');
+          let text = document.getElementsByName(elem[key])[0].value;
+          document.getElementsByName(elem[key])[0].value = "";
+          if (text == "") text = elem[key];
+          ord[privateCounter] = text;
+          td.innerHTML = text;
+          addTr.appendChild(td);
+        }
+        else
+        {
+          let name = document.createElement('a');
+          name.setAttribute("id", "order");
+          name.setAttribute("onclick", "order("+counter+")");
+          counter++;
+          let text = document.getElementsByName(elem[key])[0].value;
+          document.getElementsByName(elem[key])[0].value = "";
+          if (text == "") text = elem[key];
+          ord[privateCounter] = text;
+          name.innerHTML = text;
+          addTr.appendChild(name);
+        }
+        privateCounter++;
+      }
+      orderList[counter - 1] = {name: ord[0], description: ord[1], cost: ord[2], currency: ord[3], size: ord[4], weight: ord[5], manufacturers_firm: ord[6], dateOfManufacture: ord[7]};
+
+      evt.target.closest('table').appendChild(addTr);
+
+      //Кнопка удаления у новой строки
+      button.innerText = 'Delete String';
+      addTr.appendChild(button);
+      button.addEventListener ('click', function(evt) 
+      {
+        evt.target.closest('tr').remove();
+      });
+      table.removeChild(newTr);
+      table.appendChild(newTr);
+    });
+    table.appendChild(newTr);
+
+    //Создание обработчика на названии товара
+    function order(count)
+    {
+      let array = orderList[count];
+      let orderTable = document.getElementById("orderTable");
+      if (orderTable.lastChild !== NaN) orderTable.innerHTML = "<table id ='orderTable'></table>";
+      let orderTableTr = document.createElement('tr');
+      let ott = document.createElement('td');
+      ott.innerText = "Good Information:";
+      orderTableTr.appendChild(ott);
+      orderTable.appendChild(orderTableTr);
+      orderTableTr = document.createElement('tr');
+      for (let key in array)
+      {
+        let orderTableTd = document.createElement('td');
+        orderTableTd.innerHTML = array[key];
+        orderTableTr.appendChild(orderTableTd);
+      }
+      orderTable.appendChild(orderTableTr);
+    }
+
+  </script>
+
+  </div>
+
+  <section>
+    <table id ="orderTable"></table>
+  </section>
+
+  <section class="links">
+    <a href="index2.1.html">Back To The Main Page</a>
+  </section>
+
+ </body>
+</html>
